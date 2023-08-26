@@ -1,7 +1,7 @@
+import javax.swing.JOptionPane;
 import java.security.SecureRandom;
-import java.util.Scanner;
 
-public class PasswordGenerator {
+public class passwordGenerator {
     private static final String LOWERCASE = "abcdefghijklmnopqrstuvwxyz";
     private static final String UPPERCASE = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     private static final String DIGITS = "0123456789";
@@ -21,11 +21,10 @@ public class PasswordGenerator {
     }
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        int passwordLength = Integer.parseInt(JOptionPane.showInputDialog("Enter the Length of the password:"));
+        
         System.out.print("Enter the length of the password: ");
-        int passwordLength = sc.nextInt();
-        sc.close();
         String generatedPassword = generatePassword(passwordLength);
-        System.out.println("Generated Password: " + generatedPassword);
+        JOptionPane.showMessageDialog(null, "Generated Password: " + generatedPassword);
     }
 }
